@@ -1,0 +1,22 @@
+.entry	LOOP
+.entry	LENGTH
+.extern	L3
+.extern	W
+MAIN:	mov	S1.1, W
+add	r2, STR
+	macro m1
+		sub	r1, r4
+		prn	#abc
+
+		inc L
+	endmacro
+LOOP:	jmp W
+prn	#-a5
+m1
+mov	S1.2, r3
+bne	L3
+END:	hlt
+STR:	.string "abcdef"
+LENGTH:	.data	6,-9,15
+K:	.data	22
+S1:	.struct	8, "ab"
